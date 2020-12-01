@@ -67,11 +67,6 @@ variable "frontend_cidr" {
   default     = "172.16.0.0/20"
 }
 
-variable "backend_cidr" {
-  description = "Complete CIDR range across all three zones for backend subnets"
-  default     = "172.17.0.0/20"
-}
-
 
 ##############################################################################
 
@@ -95,15 +90,6 @@ data "ibm_is_image" "os" {
 ##############################################################################
 # Access check variables
 ##############################################################################
-
-variable "ssh_accesscheck" {
-  description = "Flag to request remote-exec validation of SSH access, true/false"
-  default     = false
-}
-
-variable "ssh_private_key" {
-  description = "SSH private key of SSH key pair used for VSIs and Bastion"
-}
 
 data "ibm_is_ssh_key" "sshkey" {
   name = var.ssh_key_name
