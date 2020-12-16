@@ -13,7 +13,7 @@ data "ibm_resource_group" "all_rg" {
 
 locals {
   generation     = 2
-  frontend_count = 1
+  frontend_count = 2
 }
 
 
